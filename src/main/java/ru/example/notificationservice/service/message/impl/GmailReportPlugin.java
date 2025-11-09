@@ -22,7 +22,6 @@ import ru.example.notificationservice.service.template.TemplateService;
 public class GmailReportPlugin implements ReportPlugin {
 
     private final JavaMailSender mailSender;
-    private final NotificationFactory notificationFactory;
     private final TemplateService templateService;
 
 

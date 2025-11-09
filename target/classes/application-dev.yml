@@ -5,10 +5,6 @@ spring:
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
     url: ${SPRING_DATASOURCE_URL}
-#  liquibase:
-#    change-log: classpath:changelog/db.changelog-master.xml
-#    default-schema: ${DEFAULT_SCHEMA}
-#    liquibase-schema: ${LIQUIBASE_SCHEMA}
   application:
     name: notification-service
   mail:
@@ -23,7 +19,7 @@ spring:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
     consumer:
       group-id: ${KAFKA_CONSUMER_GROUP_ID}
-      task-group-id: ${KAFKA_TASK_GROUP_ID} #что это?
+      task-group-id: ${KAFKA_TASK_GROUP_ID}
       auto-offset-reset: earliest
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
@@ -40,7 +36,7 @@ spring:
     listener:
       concurrency: 4
 server:
-  port: 8085
+  port: ${PORT}
 kafka:
   topics:
     email-sending: ${KAFKA_TOPIC_EMAIL_SENDING:prod-email-sending}
