@@ -3,7 +3,9 @@ package ru.example.notificationservice.model;
 
 public class EmailMessage {
           private final String to;
+
           private final String subject;
+
           private final String htmlContent;
 
           private EmailMessage(String to, String subject, String htmlContent) {
@@ -30,7 +32,9 @@ public class EmailMessage {
 
           public static class EmailMessageBuilder {
                     private String to;
+
                     private String subject;
+
                     private String htmlContent;
 
                     public EmailMessageBuilder to(String to) {

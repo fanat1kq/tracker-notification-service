@@ -6,9 +6,9 @@ import java.util.Map;
 
 @Builder
 public record Notification(
-    String to,
-    String templateType,
-    String recipientType,
-    Map<String, String> data
+          String to,
+          String templateType,
+          String recipientType,
+          Map<String, String> data
 ) {
 }

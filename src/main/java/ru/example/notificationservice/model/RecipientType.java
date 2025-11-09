@@ -17,6 +17,7 @@ public enum RecipientType {
                     return Arrays.stream(values())
                               .filter(typeFromEnum -> typeFromEnum.name().equals(type))
                               .findFirst()
-                              .orElseThrow(() -> new IllegalArgumentException("Unknown email RecipientType: " + type));
+                              .orElseThrow(() -> new IllegalArgumentException(
+                                        "Unknown email RecipientType: " + type));
           }
 }
