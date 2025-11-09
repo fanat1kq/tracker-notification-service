@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ master, develop ]
+    branches: [master, develop]
 
 env:
   IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/notificaiton-service

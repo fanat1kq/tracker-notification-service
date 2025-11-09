@@ -9,11 +9,10 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public enum NotificationType {
 
-          WELCOME("Welcome to Task Tracker", "welcome"),
-          TASK_REPORT("Your daily task report", "task-summary");
+          WELCOME("Welcome to Task Tracker","welcome"),
+          TASK_REPORT("Your daily task report","task-summary");
 
           private final String defaultSubject;
-
           private final String templateName;
 
 
@@ -21,7 +20,6 @@ public enum NotificationType {
                     return Arrays.stream(values())
                               .filter(typeFromEnum -> typeFromEnum.name().equals(type))
                               .findFirst()
-                              .orElseThrow(() -> new IllegalArgumentException(
-                                        "Unknown email Templatetype: " + type));
+                              .orElseThrow(() -> new IllegalArgumentException("Unknown email Templatetype: " + type));
           }
 }

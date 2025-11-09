@@ -8,16 +8,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class NotificationFactoryImpl implements NotificationFactory {
 
-          @Value("${spring.mail.username}")
-          private String sender;
+    @Value("${spring.mail.username}")
+    private String sender;
 
-          @Override
-          public SimpleMailMessage createMailNotification(String recipientData, String message) {
-                    SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+    @Override
+    public SimpleMailMessage createMailNotification(String recipientData, String message) {
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 
-                    simpleMailMessage.setText(message);
-                    simpleMailMessage.setFrom(sender);
-                    simpleMailMessage.setTo(recipientData);
-                    return simpleMailMessage;
-          }
+        simpleMailMessage.setText(message);
+        simpleMailMessage.setFrom(sender);
+        simpleMailMessage.setTo(recipientData);
+        return simpleMailMessage;
+    }
 }

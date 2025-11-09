@@ -17,7 +17,6 @@
             justify-content: center;
             padding: 2rem;
         }
-
         .container {
             max-width: 800px;
             background: rgba(255, 255, 255, 0.95);
@@ -26,7 +25,6 @@
             padding: 2rem;
             animation: fadeIn 1s ease-in-out;
         }
-
         h1 {
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
@@ -34,7 +32,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         table {
             width: 100%;
             border-collapse: separate;
@@ -42,52 +39,37 @@
             border-radius: 0.5rem;
             overflow: hidden;
         }
-
         th, td {
             padding: 1rem;
             transition: background-color 0.3s ease;
         }
-
         th {
             background: linear-gradient(to right, #10b981, #059669);
             color: white;
             font-weight: 700;
         }
-
         td {
             background: #f9fafb;
             border-bottom: 1px solid #e5e7eb;
         }
-
         tr:hover td {
             background: #e6f3fa;
         }
-
         .icon {
             margin-right: 0.5rem;
         }
-
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         @media (max-width: 640px) {
             .container {
                 width: 90%;
                 padding: 1rem;
             }
-
             h1 {
                 font-size: 1.5rem;
             }
-
             table {
                 font-size: 0.875rem;
             }
@@ -100,8 +82,7 @@
     <p class="text-lg text-gray-600 mb-8">Here's a premium overview of your tasks for today</p>
     <table>
         <tr>
-            <th><i class="fas fa-check-circle icon"></i> Completed Today (<span th:text="${completedCount}">0</span>)
-            </th>
+            <th><i class="fas fa-check-circle icon"></i> Completed Today (<span th:text="${completedCount}">0</span>)</th>
             <th><i class="fas fa-spinner icon"></i> In Progress (<span th:text="${pendingCount}">0</span>)</th>
         </tr>
         <tr>

@@ -1,6 +1,7 @@
 package ru.example.notificationservice.service.template;
 
 import jakarta.mail.internet.MimeMessage;
+import ru.example.notificationservice.model.EmailMessage;
 import ru.example.notificationservice.model.Notification;
 
 /**

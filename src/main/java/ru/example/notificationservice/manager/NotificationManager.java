@@ -5,5 +5,5 @@ import ru.example.notificationservice.model.Notification;
 
 public interface NotificationManager {
 
-          void handleEventByHandler(Notification notificationEvent);
+    void handleEventByHandler(Notification notificationEvent);
 }

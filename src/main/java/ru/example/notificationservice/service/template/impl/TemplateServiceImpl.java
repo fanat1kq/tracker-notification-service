@@ -54,8 +54,7 @@ public class TemplateServiceImpl implements TemplateService {
                     MimeMessage mimeMessage = mailSender.createMimeMessage();
 
                     try {
-                              MimeMessageHelper helper =
-                                        new MimeMessageHelper(mimeMessage, true, "UTF-8");
+                              MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
                               helper.setTo(email.getTo());
                               helper.setSubject(email.getSubject());
                               helper.setText(email.getHtmlContent(), true);
