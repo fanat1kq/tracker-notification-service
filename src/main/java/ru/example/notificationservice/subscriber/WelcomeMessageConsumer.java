@@ -1,4 +1,4 @@
-package ru.example.notificationservice.kafka;
+package ru.example.notificationservice.subscriber;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class WelcomeMessageConsumer {
           private final NotificationMapper notificationMapper;
 
           @SneakyThrows
-          @KafkaListener(topics = "${kafka.topics.email-sending}")
+          @KafkaListener(topics = "${kafka.topics.outbox}")
           public void handleOutboxEvent(String payloadJson) {
                     UserRegisteredPayload payload = objectMapper.readValue(parseDebeziumPayload(payloadJson),
                               UserRegisteredPayload.class);

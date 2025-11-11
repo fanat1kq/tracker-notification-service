@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.5.7</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>ru.example</groupId>
     <artifactId>notification-service</artifactId>
@@ -50,15 +50,6 @@
         </dependency>
 
         <!-- Data base -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.liquibase</groupId>-->
-        <!--            <artifactId>liquibase-core</artifactId>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>net.lbruun.springboot</groupId>-->
-        <!--            <artifactId>preliquibase-spring-boot-starter</artifactId>-->
-        <!--            <version>${preliquibase.version}</version>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
