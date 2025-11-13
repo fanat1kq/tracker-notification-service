@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import ru.example.notificationservice.dto.EmailMessage;
 import ru.example.notificationservice.dto.Notification;
-import ru.example.notificationservice.dto.NotificationType;
+import ru.example.notificationservice.dto.enumurates.NotificationType;
 import ru.example.notificationservice.dto.UserRegisteredPayload;
 
 @Mapper(componentModel = "spring")

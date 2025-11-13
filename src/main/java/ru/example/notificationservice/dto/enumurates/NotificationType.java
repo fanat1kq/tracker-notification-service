@@ -1,4 +1,4 @@
-package ru.example.notificationservice.dto;
+package ru.example.notificationservice.dto.enumurates;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

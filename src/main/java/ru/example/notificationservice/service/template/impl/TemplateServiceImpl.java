@@ -13,11 +13,9 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import ru.example.notificationservice.dto.EmailMessage;
 import ru.example.notificationservice.dto.Notification;
-import ru.example.notificationservice.dto.NotificationType;
+import ru.example.notificationservice.dto.enumurates.NotificationType;
 import ru.example.notificationservice.mapper.NotificationMapper;
 import ru.example.notificationservice.service.template.TemplateService;
-
-import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
