@@ -13,7 +13,7 @@ public interface NotificationMapper {
     @Mapping(source = "email", target = "to")
     NotificationDto toNotification(UserRegisteredPayload payload);
 
-    @Mapping(target = "subject", expression = "java(resolveSubject(notification))")
+    @Mapping(target = "subject", expression = "java(resolveSubject(notificationDto))")
     EmailMessage toEmailMessage(NotificationDto notificationDto);
 
     default String resolveSubject(NotificationDto notificationDto) {
