@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>ru.example</groupId>
-    <artifactId>notification-service</artifactId>
+    <artifactId>notificationDto-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>notification-service</name>
-    <description>notification-service</description>
+    <name>notificationDto-service</name>
+    <description>notificationDto-service</description>
 
     <properties>
         <java.version>21</java.version>
@@ -48,6 +48,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
         <!-- Data base -->
         <dependency>
@@ -55,7 +59,15 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.lbruun.springboot</groupId>
+            <artifactId>preliquibase-spring-boot-starter</artifactId>
+            <version>${preliquibase.version}</version>
+        </dependency>
 
         <!--test -->
         <dependency>

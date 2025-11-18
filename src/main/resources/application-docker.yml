@@ -24,7 +24,10 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 
+
       properties:
+        max.partition.fetch.bytes: 10485760  # 10MB
+        message.max.bytes: 10485760
         spring.json.use.type.headers: false #если разные типы и нужен определить через хедер- не подойдет
         spring.json.remove.type.headers: true
         spring.json.value.default.type: ru.example.notificationservice.model.Notification

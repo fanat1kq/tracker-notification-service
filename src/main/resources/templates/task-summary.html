@@ -170,7 +170,8 @@
 </head>
 <body>
 <center>
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #1e3a8a; padding: 20px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"
+           style="background-color: #1e3a8a; padding: 20px;">
         <tr>
             <td align="center">
                 <div class="container">
@@ -189,17 +190,18 @@
                         <tr>
                             <td class="content">
                                 <!-- Stats Grid -->
-                                <table class="stats-grid" role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                <table class="stats-grid" role="presentation" cellpadding="0" cellspacing="0"
+                                       border="0">
                                     <tr>
                                         <td width="50%" style="padding: 5px;">
                                             <div class="stat-card">
-                                                <span class="stat-number" th:text="${completedCount}">0</span>
+                                                <span class="stat-number" th:text="${COMPLETED_TASK}">0</span>
                                                 <span class="stat-label">✅ Completed</span>
                                             </div>
                                         </td>
                                         <td width="50%" style="padding: 5px;">
                                             <div class="stat-card">
-                                                <span class="stat-number" th:text="${pendingCount}">0</span>
+                                                <span class="stat-number" th:text="${NEW_TASK}">0</span>
                                                 <span class="stat-label">🔄 In Progress</span>
                                             </div>
                                         </td>
@@ -212,10 +214,10 @@
                                         <span>✅ Completed Tasks</span>
                                     </div>
                                     <div class="task-list">
-                                        <div th:if="${completedTasks}" th:utext="${completedTasks}">
+                                        <div th:if="${COMPLETED_TASK}" th:utext="${COMPLETED_TASK}">
                                             No tasks completed today
                                         </div>
-                                        <div th:unless="${completedTasks}" style="color: #94a3b8; font-style: italic;">
+                                        <div th:unless="${COMPLETED_TASK}" style="color: #94a3b8; font-style: italic;">
                                             No tasks completed today
                                         </div>
                                     </div>
@@ -227,10 +229,10 @@
                                         <span>🔄 Tasks In Progress</span>
                                     </div>
                                     <div class="task-list">
-                                        <div th:if="${inProgressTasks}" th:utext="${inProgressTasks}">
+                                        <div th:if="${IN_PROGRESS_TASK}" th:utext="${IN_PROGRESS_TASK}">
                                             No tasks in progress
                                         </div>
-                                        <div th:unless="${inProgressTasks}" style="color: #94a3b8; font-style: italic;">
+                                        <div th:unless="${IN_PROGRESS_TASK}" style="color: #94a3b8; font-style: italic;">
                                             No tasks in progress
                                         </div>
                                     </div>

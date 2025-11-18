@@ -9,8 +9,8 @@ import ru.example.notificationservice.service.message.ReportPlugin;
 @EnablePluginRegistries(ReportPlugin.class)
 public class NotificationServiceApplication {
 
-          public static void main(String[] args) {
-                    SpringApplication.run(NotificationServiceApplication.class, args);
-          }
+    public static void main(String[] args) {
+        SpringApplication.run(NotificationServiceApplication.class, args);
+    }
 
 }

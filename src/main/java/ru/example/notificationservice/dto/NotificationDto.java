@@ -5,7 +5,7 @@ import lombok.Builder;
 import java.util.Map;
 
 @Builder
-public record Notification(
+public record NotificationDto(
     String to,
     String templateType,
     String recipientType,

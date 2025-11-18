@@ -3,21 +3,21 @@ package ru.example.notificationservice.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import ru.example.notificationservice.dto.EmailMessage;
-import ru.example.notificationservice.dto.Notification;
-import ru.example.notificationservice.dto.enumurates.NotificationType;
+import ru.example.notificationservice.dto.NotificationDto;
 import ru.example.notificationservice.dto.UserRegisteredPayload;
+import ru.example.notificationservice.dto.enumurates.NotificationType;
 
 @Mapper(componentModel = "spring")
 public interface NotificationMapper {
 
-          @Mapping(source = "email", target = "to")
-          Notification toNotification(UserRegisteredPayload payload);
+    @Mapping(source = "email", target = "to")
+    NotificationDto toNotification(UserRegisteredPayload payload);
 
-          @Mapping(target = "subject", expression = "java(resolveSubject(notification))")
-          EmailMessage toEmailMessage(Notification notification);
+    @Mapping(target = "subject", expression = "java(resolveSubject(notification))")
+    EmailMessage toEmailMessage(NotificationDto notificationDto);
 
-          default String resolveSubject(Notification notification) {
-                    NotificationType emailType = NotificationType.fromString(notification.templateType());
-                    return notification.data().getOrDefault("subject", emailType.getDefaultSubject());
-          }
+    default String resolveSubject(NotificationDto notificationDto) {
+        NotificationType emailType = NotificationType.fromString(notificationDto.templateType());
+        return notificationDto.data().getOrDefault("subject", emailType.getDefaultSubject());
+    }
 }
