@@ -1,10 +1,14 @@
 spring:
   config:
-    import: optional:file:.env[.properties]
+    import: optional:file:.env.dev[.properties]
   datasource:
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
     url: ${SPRING_DATASOURCE_URL}
+  liquibase:
+    change-log: classpath:changelog/db.changelog-master.xml
+    default-schema: ${DEFAULT_SCHEMA}
+    liquibase-schema: ${LIQUIBASE_SCHEMA}
   application:
     name: notification-service
   mail:
@@ -18,27 +22,21 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
     consumer:
+      isolation-level: read_committed
       group-id: ${KAFKA_CONSUMER_GROUP_ID}
       task-group-id: ${KAFKA_TASK_GROUP_ID}
       auto-offset-reset: earliest
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
       properties:
-        spring.json.use.type.headers: false #если разные типы и нужен определить через хедер- не подойдет
-        spring.json.remove.type.headers: true
-        spring.json.value.default.type: ru.example.notificationservice.model.Notification
-        spring.json.trusted.packages: 'ru'
-        spring:
-          kafka:
-            template:
-              default-topic: my-service-dlt
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: com.example.Notification
     listener:
-      concurrency: 4
+      type: single
+      ack-mode: MANUAL_IMMEDIATE
 server:
   port: ${PORT}
 kafka:
   topics:
+    outbox: ${KAFKA_TOPIC_OUTBOX:transformed-outbox.authorization_service.outbox_events}
     email-sending: ${KAFKA_TOPIC_EMAIL_SENDING:prod-email-sending}
-    user-info: ${KAFKA_TOPIC_USER_INFO:user-info-topic}
-    task-notification: ${KAFKA_TOPIC_TASK_NOTIFICATION:task-notification-topic}
