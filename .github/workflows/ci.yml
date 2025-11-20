@@ -74,7 +74,7 @@ jobs:
             docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin <<< "${{ secrets.DOCKERHUB_TOKEN }}"
             docker stop notificaiton-service || true
             docker rm notificaiton-service || true
-            docker pull --platform linux/amd64 ${{ env.IMAGE_NAME }}:latest
+            docker pull --platform linux/amd64 ${{ env.IMAGE_NAME }}:master
             cd ~/app/task-tracker
             docker-compose -f docker-compose.prod.yml up -d notification-service
             docker rmi $(docker images "${{ env.IMAGE_NAME }}" --filter "before=${{ env.IMAGE_NAME }}:master" -q) || true
