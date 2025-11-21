@@ -27,7 +27,6 @@ spring:
       task-group-id: ${KAFKA_TASK_GROUP_ID}
       auto-offset-reset: earliest
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-
       properties:
         spring.json.trusted.packages: "dto"
         spring.json.value.default.type: com.example.Notification
