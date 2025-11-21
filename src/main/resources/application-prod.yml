@@ -1,6 +1,6 @@
 spring:
   config:
-    import: optional:file:.env.dev[.properties]
+    import: optional:file:.env[.properties]
   datasource:
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
@@ -29,7 +29,7 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
       properties:
-        spring.json.trusted.packages: "*"
+        spring.json.trusted.packages: "dto"
         spring.json.value.default.type: com.example.Notification
     listener:
       type: single

@@ -42,7 +42,7 @@ public class TemplateServiceImpl implements TemplateService {
         notificationDto.data().forEach(context::setVariable);
         return templateEngine.process(
             NotificationType.fromString(notificationDto.templateType())
-                .getTemplateName(), context);
+                .getTemplateName().toLowerCase(), context);
     }
 
     private MimeMessage convertToMimeMessage(EmailMessage email) {

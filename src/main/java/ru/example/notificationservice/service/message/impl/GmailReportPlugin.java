@@ -25,7 +25,7 @@ public class GmailReportPlugin implements ReportPlugin {
         MimeMessage emailMessage = templateService.create(notificationDto);
 
         mailSender.send(emailMessage);
-        log.info("Cообщение отправлено на почту");
+        log.info("Message sended");
     }
 
     @Override
